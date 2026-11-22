@@ -1,0 +1,12 @@
+{
+  "environment": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.13.5",
+  "method": "100 sequential in-process TestClient calls (not network/concurrent)",
+  "count": 100,
+  "mean_api_ms": 2.229,
+  "p95_api_ms": 2.711,
+  "mean_model_pipeline_ms": 0.538,
+  "approx_throughput_requests_sec": 448.54,
+  "proposed_p95_target_ms": 500,
+  "p95_target_met_in_local_test": true
+}

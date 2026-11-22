@@ -1,0 +1,16 @@
+﻿ID;Exigence;Cas de test / preuve;Resultat attendu;Priorite;Risque
+EX01;Age entre 18 et 100 ans;test_invalid_field/test_boundaries;Rejet 422 hors limites;Critique;Acceptation mineur ou rejet client valide
+EX02;Revenu numerique positif et borne;test_invalid_field/test_invalid_request;Rejet 422;Critique;Entree erronée
+EX03;Duree de credit entiere entre 1 et 360;test_invalid_field/test_bad_types;Rejet 422;Haute;Calcul incoherent
+EX04;Probabilite finie entre 0 et 1;test_valid_request/test_valid_unusual_values;"HTTP 200 ; 0 <= p <= 1";Critique;Score non interpretable
+EX05;Disponibilite du modele;test_unavailable_model/test_health;HTTP 503 si absent;Critique;Service inutilisable
+EX06;Champs requis obligatoires;test_missing_field/test_missing_all;HTTP 422;Haute;Entree incomplete
+EX07;Non regression modele et API;test_golden_prediction/test_metrics_not_regressed;Tolerance reference documentee;Critique;Derive silencieuse
+EX08;Aucun champ supplementaire;test_extra_field;HTTP 422;Moyenne;Schema non maitrise
+EX09;Erreur JSON geree;test_malformed_json;HTTP 422;Moyenne;Exception non controlee
+EX10;Pas de trace interne exposee;test_preprocessing_error_is_masked/test_prediction_error_is_masked;HTTP 500 sans detail technique;Critique;Fuite informations internes
+EX11;Dimensions du modele coherentes;test_wrong_model_dimensions;HTTP 500 sans traceback;Haute;Prediction incorrecte
+EX12;Metadonnees versionnees;test_model_info/test_full_pipeline;Version et variables documentees;Haute;Incoherence de versions
+EX13;Valeurs non finies refusees;test_nonfinite_internal_validation/test_bad_types;Validation refuse;Haute;Erreur numerique
+EX14;Sauvegarde/rechargement stable;test_save_reload_consistency;Predictions identiques;Haute;Divergence apres deploiement
+EX15;Suivi latence p95;scripts/benchmark.py;Mesure locale et objectif 500 ms;Moyenne;Temps de reponse trop long

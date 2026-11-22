@@ -1,0 +1,19 @@
+{
+  "version": "synthetic-v1.0",
+  "features": [
+    "age",
+    "revenu_mensuel",
+    "montant_credit",
+    "duree_mois",
+    "anciennete_activite"
+  ],
+  "data_type": "synthetic",
+  "samples": 2400,
+  "seed": 2026,
+  "decision_threshold": 0.5,
+  "test_metrics": {
+    "recall": 0.054945,
+    "f1": 0.104167
+  },
+  "limitations": "Donnees synthetiques ; non valide pour octroi reel"
+}
